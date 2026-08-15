@@ -1,10 +1,14 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import os
 
-# Load the model using a relative path for cloud deployment
-model = joblib.load("gradient_boosting_model.pkl")
+# Get the exact folder where this Python file is located (the CODE folder)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, "gradient_boosting_model.pkl")
 
+# Load the model safely using its absolute path
+model = joblib.load(model_path)
 
 
 st.title("🏡 House Price Prediction App")
