@@ -138,4 +138,23 @@ if submitted:
     # Make prediction using the loaded model
     prediction = model.predict(input_df)
 
-    st.metric(label="Estimated House Sale Price", value=f"${prediction[0]:,.2f}")
+    st.metric(label="Estimated House Sale Price", value=f"Rs.{prediction[0]:,.2f}")
+
+
+st.warning("""
+⚠️ Disclaimer
+
+This House Price Prediction application provides estimated prices only
+based on the dataset and machine learning model used.
+
+The predicted price may not reflect the actual market value of a property.
+Users should independently verify the property details and current market
+price before making any financial or other decisions.
+
+This application is developed for educational and informational purposes only.
+It should not be considered a guarantee, professional advice, or a legally
+binding valuation.
+
+The developer is not responsible for any loss, dispute, or decision made
+based on the prediction.
+""")
